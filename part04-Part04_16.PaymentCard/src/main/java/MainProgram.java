@@ -7,7 +7,7 @@ public class MainProgram {
         // Here you can write code to test that PaymentCard works as intended
         // be sure to erase the extra code for the last part of the exercise!
         PaymentCard paul = new PaymentCard(20.0);
-        PaymentCard matt = new PaymentCard(30.0);
+        PaymentCard matt = new PaymentCard(3.00);
 
         paul.eatHeartily();
         matt.eatAffordably();
