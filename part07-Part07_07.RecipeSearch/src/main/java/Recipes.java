@@ -22,19 +22,46 @@ public class Recipes {
         recipes.add(recipe);
     }
     
-    public ArrayList<Recipe> findRecipe(String name) {
-        ArrayList<Recipe> foundRecipes = new ArrayList<>();
+    public Recipes findRecipeByName(String name) {
+        Recipes foundRecipes = new Recipes();
         for (Recipe recipe: this.recipes) {
             if (recipe.getName().contains(name)) {
-                foundRecipes.add(recipe);
+                foundRecipes.addRecipe(recipe);
             }
         }
         
         return foundRecipes;
     }
+    
+    public Recipes findRecipeByCookingTime(int cookingTime) {
+        Recipes foundRecipes = new Recipes();
+        for (Recipe recipe: this.recipes) {
+            if (recipe.getCookingTime() <= cookingTime) {
+                foundRecipes.addRecipe(recipe);
+            }
+        }
+        
+        return foundRecipes;
+    }
+    
+    public Recipes findRecipeByIngredient(String ingredient) {
+        Recipes foundRecipes = new Recipes();
+        for (Recipe recipe: this.recipes) {
+            if (recipe.getIngredients().contains(ingredient)) {
+                foundRecipes.addRecipe(recipe);
+            }
+        }
+        
+        return foundRecipes;
+
+    }
 
     public ArrayList<Recipe> getRecipes() {
         return recipes;
+    }
+    
+    public int recipeCount() {
+        return this.recipes.size();
     }
    
 }
