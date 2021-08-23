@@ -25,7 +25,7 @@ public class BirdList {
     public void add(Bird bird) {
         this.allBirds.add(bird);
         int count = birdFrequency.containsKey(bird) ? birdFrequency.get(bird) : 0;
-        birdFrequency.put(bird, count + 1);
+        birdFrequency.put(bird, count);
     }
 
     public ArrayList<Bird> getAllBirds() {
